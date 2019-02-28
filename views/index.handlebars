@@ -1,8 +1,5 @@
 <div class="container">
 
-    <h1 class="text-center">Eat-Da-Burger!</h1>
-
-
     <img src="https://res.cloudinary.com/teepublic/image/private/s--ZgNyM19g--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1516666523/production/designs/2303324_0.jpg"
         alt="p1">
 
@@ -10,7 +7,7 @@
 
     <form class="create-form text-center">
         <div class="form-group">
-            <input type="text" id="name" name="burger_name">
+            <input type="text" id="brug" name="burger_name">
 
             <button type="submit" class="btn btn-success" id="addburger">Add Burger</button>
         </div>
@@ -27,12 +24,7 @@
                     <ul>
                         {{#each burgers}}
                         {{#unless devoured}}
-                        <div>
-                            {{burger_name}}
-                            <form>
-                                <button class="eatburger" type="submit">^ Devour! ^</button>
-                            </form>
-                        </div>
+                        {{> burger/burgers-block devoured=true}}
                         {{/unless}}
                         {{/each}}
                     </ul>
@@ -47,11 +39,9 @@
                 <div class="panel-body">
                     <ul>
                         {{#each burgers}}
-                        {{#unless devoured}}
-                            <div>
-                                {{burger_name}}
-                            </div>
-                        {{/unless}}
+                        {{#if devoured}}
+                        {{> burger/burgers-block devoured=false}}
+                        {{/if}}
                         {{/each}}
                     </ul>
                 </div>

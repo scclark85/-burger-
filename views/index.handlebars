@@ -26,11 +26,11 @@
                 <div class="panel-body">
                     <ul>
                         {{#each burgers}}
-                        {{#unless this.devoured}}
+                        {{#unless devoured}}
                         <div>
-                            {{this.burger_name}}
-                            <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                                <button type="submit">^Devour!^</button>
+                            {{burger_name}}
+                            <form>
+                                <button class="eatburger" type="submit">^ Devour! ^</button>
                             </form>
                         </div>
                         {{/unless}}
@@ -47,9 +47,9 @@
                 <div class="panel-body">
                     <ul>
                         {{#each burgers}}
-                        {{#unless this.devoured}}
+                        {{#unless devoured}}
                             <div>
-                                {{this.burger_name}}
+                                {{burger_name}}
                             </div>
                         {{/unless}}
                         {{/each}}

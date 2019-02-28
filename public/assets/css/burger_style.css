@@ -1,0 +1,17 @@
+body {
+    background: rgb(212, 212, 132);
+}
+
+#left{
+    background: orange
+}
+
+#right{
+    background: green
+}
+
+img {
+    height: 350px;
+    width: 300px;
+    margin-left: 37%;
+}

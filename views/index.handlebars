@@ -1,0 +1,62 @@
+<div class="container">
+
+    <h1 class="text-center">Eat-Da-Burger!</h1>
+
+
+    <img src="https://res.cloudinary.com/teepublic/image/private/s--ZgNyM19g--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1516666523/production/designs/2303324_0.jpg"
+        alt="p1">
+
+    <h2 class="text-center">Make A Burger</h2>
+
+    <form class="create-form text-center">
+        <div class="form-group">
+            <input type="text" id="name" name="burger_name">
+
+            <button type="submit" class="btn btn-success" id="addburger">Add Burger</button>
+        </div>
+    </form>
+
+    <hr>
+
+    {{!-- undevoured burgers --}}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center" id="left"><strong>Make Your Burger</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                        {{#unless this.devoured}}
+                        <div>
+                            {{this.burger_name}}
+                            <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+                                <button type="submit">^Devour!^</button>
+                            </form>
+                        </div>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {{!-- devoured burgers --}}
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center" id="right"><strong>You've Devoured Your Burger</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                        {{#unless this.devoured}}
+                            <div>
+                                {{this.burger_name}}
+                            </div>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

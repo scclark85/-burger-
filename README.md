@@ -1,6 +1,5 @@
 # Burger App
 This is an application that will log the desired burgers created and give you the option to devour them.  
-![alt text](assets/img/Screen Shot 2019-04-25 at 8.36.35 AM.png)
 
 ### Technologies Used
 MYSQL, Node, Express, Handlebars, and ORM.  
